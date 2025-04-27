@@ -1,3 +1,3 @@
-def log_login(username):
-    print(f"[LOGIN] User {username} logged in.")
+def calculate_tax(amount):
+    return amount * 0.18
 
