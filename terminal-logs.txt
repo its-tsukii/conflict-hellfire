@@ -1,0 +1,808 @@
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (master)
+$ touch app.py utils.py README.md
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (master)
+$ nano app.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (master)
+$ nano utils.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (master)
+$ nano README.md
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (master)
+$ git add .
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'utils.py', LF will be replaced by CRLF the next time Git touches it
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (master)
+$ commit -m "Initial commit on main branch"
+bash: commit: command not found
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (master)
+$ git checkout -b feature/login
+Switched to a new branch 'feature/login'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ nano app.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ nano utils.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git add .
+warning: in the working copy of 'app.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'utils.py', LF will be replaced by CRLF the next time Git touches it
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git commit -m "Add login features"
+[feature/login (root-commit) b5fb6ae] Add login features
+ 3 files changed, 10 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 app.py
+ create mode 100644 utils.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git checkout -b feature/payment
+Switched to a new branch 'feature/payment'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ nano app.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ nano utils.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git add .
+warning: in the working copy of 'app.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'utils.py', LF will be replaced by CRLF the next time Git touches it
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git commit -m "Add payment feature with tax calculation"
+[feature/payment 0c84426] Add payment feature with tax calculation
+ 2 files changed, 4 insertions(+), 6 deletions(-)
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git checkout --v
+error: unknown option `v'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --[no-]guess          second guess 'git checkout <no-such-branch>' (default)
+    --[no-]overlay        use overlay mode (default)
+    -q, --[no-]quiet      suppress progress reporting
+    --[no-]recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --[no-]progress       force progress reporting
+    -m, --[no-]merge      perform a 3-way merge with the new branch
+    --[no-]conflict <style>
+                          conflict style (merge, diff3, or zdiff3)
+    -d, --[no-]detach     detach HEAD at named commit
+    -t, --[no-]track[=(direct|inherit)]
+                          set branch tracking configuration
+    -f, --[no-]force      force checkout (throw away local modifications)
+    --[no-]orphan <new-branch>
+                          new unborn branch
+    --[no-]overwrite-ignore
+                          update ignored files (default)
+    --[no-]ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --[no-]patch      select hunks interactively
+    --[no-]ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git branch--v
+git: 'branch--v' is not a git command. See 'git --help'.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git branch --v
+  feature/login   b5fb6ae Add login features
+* feature/payment 0c84426 Add payment feature with tax calculation
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git checkout -b feature/security
+Switched to a new branch 'feature/security'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ ls
+README.md  app.py  utils.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git branch -d feature/security
+error: cannot delete branch 'feature/security' used by worktree at 'C:/Users/ASUS/conflict-hellfire'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ ls
+README.md  app.py  utils.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git status
+On branch feature/security
+nothing to commit, working tree clean
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git branch --v
+  feature/login    b5fb6ae Add login features
+  feature/payment  0c84426 Add payment feature with tax calculation
+* feature/security 0c84426 Add payment feature with tax calculation
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git stash
+No local changes to save
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git status
+On branch feature/security
+nothing to commit, working tree clean
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git checkout feature/payment
+Switched to branch 'feature/payment'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ cat app.py
+def process_payment(user, amount):
+    print(f"Processing payment of ${amount} for {user}.")
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/payment)
+$ git checkout feature/security
+Switched to branch 'feature/security'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ nano utils.py
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git add . git commit -m "Add encryption but accidentally delete log_info"
+error: unknown switch `m'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --[no-]dry-run    dry run
+    -v, --[no-]verbose    be verbose
+
+    -i, --[no-]interactive
+                          interactive picking
+    -p, --[no-]patch      select hunks interactively
+    -e, --[no-]edit       edit current diff and apply
+    -f, --[no-]force      allow adding otherwise ignored files
+    -u, --[no-]update     update tracked files
+    --[no-]renormalize    renormalize EOL of tracked files (implies -u)
+    -N, --[no-]intent-to-add
+                          record only the fact that the path will be added later
+    -A, --[no-]all        add changes from all tracked and untracked files
+    --[no-]ignore-removal ignore paths removed in the working tree (same as --no-all)
+    --[no-]refresh        don't add, only refresh the index
+    --[no-]ignore-errors  just skip files which cannot be added because of errors
+    --[no-]ignore-missing check if - even missing - files are ignored in dry run
+    --[no-]sparse         allow updating entries outside of the sparse-checkout cone
+    --[no-]chmod (+|-)x   override the executable bit of the listed files
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git add .
+warning: in the working copy of 'utils.py', LF will be replaced by CRLF the next time Git touches it
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git commit -m "Add encryption but accidentally delete log_info"
+[feature/security 90d5931] Add encryption but accidentally delete log_info
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git remote add origin https://github.com/its-tsukii/conflict-hellfire.git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/its-tsukii/conflict-hellfire.git'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git push
+fatal: The current branch feature/security has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature/security
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git push -u origin
+fatal: The current branch feature/security has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature/security
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git push --set-upstram origin main
+error: unknown option `set-upstram'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]repo <repository>
+                          repository
+    --[no-]all            push all branches
+    --[no-]branches       alias of --all
+    --[no-]mirror         mirror all refs
+    -d, --[no-]delete     delete refs
+    --[no-]tags           push tags (can't be used with --all or --branches or --mirror)
+    -n, --[no-]dry-run    dry run
+    --[no-]porcelain      machine-readable output
+    -f, --[no-]force      force updates
+    --[no-]force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --[no-]force-if-includes
+                          require remote updates to be integrated locally
+    --[no-]recurse-submodules (check|on-demand|no)
+                          control recursive pushing of submodules
+    --[no-]thin           use thin pack
+    --[no-]receive-pack <receive-pack>
+                          receive pack program
+    --[no-]exec <receive-pack>
+                          receive pack program
+    -u, --[no-]set-upstream
+                          set upstream for git pull/status
+    --[no-]progress       force progress reporting
+    --[no-]prune          prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --verify              opposite of --no-verify
+    --[no-]follow-tags    push missing but relevant tags
+    --[no-]signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --[no-]atomic         request atomic transaction on remote side
+    -o, --[no-]push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git push --set-upstream origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/its-tsukii/conflict-hellfire.git'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git push --set-upstream origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/its-tsukii/conflict-hellfire.git'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git push --set-upstream origin
+fatal: The current branch feature/security has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature/security
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/security)
+$ git checkout -b main
+Switched to a new branch 'main'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin main
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (12/12), 1.23 KiB | 1.23 MiB/s, done.
+Total 12 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/its-tsukii/conflict-hellfire.git
+ * [new branch]      main -> main
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git branch --v
+  feature/login    b5fb6ae Add login features
+  feature/payment  0c84426 Add payment feature with tax calculation
+  feature/security 90d5931 Add encryption but accidentally delete log_info
+* main             90d5931 Add encryption but accidentally delete log_info
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin .
+fatal: invalid refspec '.'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin *
+error: src refspec README.md does not match any
+error: src refspec app.py does not match any
+error: src refspec utils.py does not match any
+error: failed to push some refs to 'https://github.com/its-tsukii/conflict-hellfire.git'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin feature
+error: src refspec feature does not match any
+error: failed to push some refs to 'https://github.com/its-tsukii/conflict-hellfire.git'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push feature
+fatal: 'feature' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin feature/payment
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'feature/payment' on GitHub by visiting:
+remote:      https://github.com/its-tsukii/conflict-hellfire/pull/new/feature/payment
+remote:
+To https://github.com/its-tsukii/conflict-hellfire.git
+ * [new branch]      feature/payment -> feature/payment
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push --all origin
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/its-tsukii/conflict-hellfire.git
+ * [new branch]      feature/login -> feature/login
+ * [new branch]      feature/security -> feature/security
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/login
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge payment
+merge: payment - not something we can merge
+
+Did you mean this?
+        origin/feature/payment
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/payment
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/security
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ gti pull
+bash: gti: command not found
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ gti fetch origin
+bash: gti: command not found
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git fetch origin
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/login
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git fetch --all
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/login
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git diff main..feature/login
+diff --git a/app.py b/app.py
+index 82497f3..63a3618 100644
+--- a/app.py
++++ b/app.py
+@@ -1,3 +1,5 @@
+-def process_payment(user, amount):
+-    print(f"Processing payment of ${amount} for {user}.")
++def login(username, password):
++    if username == "admin" and password == "password":
++        return True
++    return False
+
+diff --git a/utils.py b/utils.py
+index 1878884..0eadc8a 100644
+--- a/utils.py
++++ b/utils.py
+@@ -1,6 +1,3 @@
+-def encrypt(data):
+-    return ''.join([chr(ord(char) + 2) for char in data])
+-
+-def decrypt(data):
+-    return ''.join([chr(ord(char) - 2) for char in data])
++def log_login(username):
++    print(f"[LOGIN] User {username} logged in.")
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ echo "$(git diff main..feature/login)"
+diff --git a/app.py b/app.py
+index 82497f3..63a3618 100644
+--- a/app.py
++++ b/app.py
+@@ -1,3 +1,5 @@
+-def process_payment(user, amount):
+-    print(f"Processing payment of ${amount} for {user}.")
++def login(username, password):
++    if username == "admin" and password == "password":
++        return True
++    return False
+
+diff --git a/utils.py b/utils.py
+index 1878884..0eadc8a 100644
+--- a/utils.py
++++ b/utils.py
+@@ -1,6 +1,3 @@
+-def encrypt(data):
+-    return ''.join([chr(ord(char) + 2) for char in data])
+-
+-def decrypt(data):
+-    return ''.join([chr(ord(char) - 2) for char in data])
++def log_login(username):
++    print(f"[LOGIN] User {username} logged in.")
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git fetch
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git checkout feature/login
+Switched to branch 'feature/login'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> feature/login
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git checkout main
+Switched to branch 'main'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/login
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git branch
+  feature/login
+  feature/payment
+  feature/security
+* main
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git rev-parse main
+90d5931be57f8b52a75c91ea1173c955d5ef76d9
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git rev-parse feature/login
+b5fb6aef46003f171190350c2a3c6c36bf4ce93f
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git fetch main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git fetch origin
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git diff main..feature/login
+diff --git a/app.py b/app.py
+index 82497f3..63a3618 100644
+--- a/app.py
++++ b/app.py
+@@ -1,3 +1,5 @@
+-def process_payment(user, amount):
+-    print(f"Processing payment of ${amount} for {user}.")
++def login(username, password):
++    if username == "admin" and password == "password":
++        return True
++    return False
+
+diff --git a/utils.py b/utils.py
+index 1878884..0eadc8a 100644
+--- a/utils.py
++++ b/utils.py
+@@ -1,6 +1,3 @@
+-def encrypt(data):
+-    return ''.join([chr(ord(char) + 2) for char in data])
+-
+-def decrypt(data):
+-    return ''.join([chr(ord(char) - 2) for char in data])
++def log_login(username):
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/login
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git checkout feature/login
+Switched to branch 'feature/login'
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git status
+On branch feature/login
+nothing to commit, working tree clean
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git log --oneline --graph --all
+* 90d5931 (origin/main, origin/feature/security, main, feature/security) Add encryption but accidentally delete log_info
+* 0c84426 (origin/feature/payment, feature/payment) Add payment feature with tax calculation
+* b5fb6ae (HEAD -> feature/login, origin/feature/login) Add login features
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (feature/login)
+$ git checkout main
+git merge --no-ff feature/login
+Switched to branch 'main'
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git checkout main
+git cherry-pick b5fb6ae
+Already on 'main'
+Auto-merging app.py
+CONFLICT (add/add): Merge conflict in app.py
+Auto-merging utils.py
+CONFLICT (add/add): Merge conflict in utils.py
+error: could not apply b5fb6ae... Add login features
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ code .
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ git add .
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ git commit -m " fixed merger on login"
+[main d737c6e]  fixed merger on login
+ Date: Sun Apr 27 06:30:30 2025 +0530
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 567 bytes | 567.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/its-tsukii/conflict-hellfire.git
+   90d5931..d737c6e  main -> main
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/payment
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git log --oneline --graph --all
+* d737c6e (HEAD -> main, origin/main)  fixed merger on login
+* 90d5931 (origin/feature/security, feature/security) Add encryption but accidentally delete log_info
+* 0c84426 (origin/feature/payment, feature/payment) Add payment feature with tax calculation
+* b5fb6ae (origin/feature/login, feature/login) Add login features
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git cherry-pick 0c84426
+Auto-merging app.py
+CONFLICT (content): Merge conflict in app.py
+Auto-merging utils.py
+CONFLICT (content): Merge conflict in utils.py
+error: could not apply 0c84426... Add payment feature with tax calculation
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ code .
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ git add .
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ git commit -m "Fixed merger on Feature/payment
+> "
+[main 7c8f7d8] Fixed merger on Feature/payment
+ Date: Sun Apr 27 06:32:13 2025 +0530
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 451 bytes | 451.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/its-tsukii/conflict-hellfire.git
+   d737c6e..7c8f7d8  main -> main
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git branch --v
+  feature/login    b5fb6ae Add login features
+  feature/payment  0c84426 Add payment feature with tax calculation
+  feature/security 90d5931 Add encryption but accidentally delete log_info
+* main             7c8f7d8 Fixed merger on Feature/payment
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git merge feature/security
+Already up to date.
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git log --oneline --graph --all
+* 7c8f7d8 (HEAD -> main, origin/main) Fixed merger on Feature/payment
+* d737c6e  fixed merger on login
+* 90d5931 (origin/feature/security, feature/security) Add encryption but accidentally delete log_info
+* 0c84426 (origin/feature/payment, feature/payment) Add payment feature with tax calculation
+* b5fb6ae (origin/feature/login, feature/login) Add login features
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git cherry-pick 90d5931
+Auto-merging utils.py
+CONFLICT (content): Merge conflict in utils.py
+error: could not apply 90d5931... Add encryption but accidentally delete log_info
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ git status
+On branch main
+You are currently cherry-picking commit 90d5931.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   utils.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ git add .
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main|CHERRY-PICKING)
+$ git commit -m "Fixed merger on feature security
+> "
+[main 9ff4f23] Fixed merger on feature security
+ Date: Sun Apr 27 06:41:16 2025 +0530
+ 1 file changed, 3 insertions(+)
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/its-tsukii/conflict-hellfire.git
+   7c8f7d8..9ff4f23  main -> main
+
+ASUS@AAYUSHPC MINGW64 ~/conflict-hellfire (main)
