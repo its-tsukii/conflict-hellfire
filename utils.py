@@ -5,5 +5,8 @@ def calculate_tax(amount):
 
 def decrypt(data):
     return ''.join([chr(ord(char) - 2) for char in data])
+
+def decrypt(data):
+    return ''.join([chr(ord(char) - 2) for char in data])
 def log_login(username):
     print(f"[LOGIN] User {username} logged in.")
